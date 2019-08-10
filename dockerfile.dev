@@ -1,0 +1,18 @@
+FROM node:12.7.0-alpine
+
+WORKDIR /src/app
+
+COPY package.json ./
+
+RUN npm install
+#this command is used as we need ng command globally
+RUN npm install -g @angular/cli@7.3.9
+
+
+
+
+# if we are using volumes we don't need to copy the files from directory to container as anyways it is going to
+# refer the files from thie directory but we need it in case we don't use docker-compose
+COPY . .
+
+CMD ng serve  --host 0.0.0.0

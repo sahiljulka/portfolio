@@ -1,0 +1,23 @@
+version: "3"
+services:
+  node-app:
+    build:
+      #context is used to tell relative path of docker file
+      context: .
+      # docker file is used to tell about the name of docker file if it is not dockerfile which is by default
+      dockerfile: dockerfile.dev
+    ports:
+      - "4001:4200"
+    volumes:
+      - /app/node_modules
+      - .:/src/app
+  node-test-app:
+    build:
+      context: .
+      dockerfile: dockerfile.dev
+    ports:
+      - "4002:9876"
+    volumes:
+      - /app/node_modules
+      - .:/src/app
+    command: ["npm", "run", "test"]

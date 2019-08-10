@@ -1,10 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit, ViewChild } from "@angular/core";
+import { MatSidenav } from "@angular/material/sidenav";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.scss"]
 })
 export class AppComponent {
-  title = 'portfolio';
+  title = "portfolio";
+  opened: boolean = false;
 }
