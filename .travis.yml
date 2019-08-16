@@ -10,4 +10,4 @@ before_install:
   - docker build -t dockerimage -f dockerfile.dev .
 
 script:
-  - docker run dockerimage npm run test
+  - docker run dockerimage npm run test-headless
