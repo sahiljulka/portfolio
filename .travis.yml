@@ -12,8 +12,8 @@ addons:
 services:
   - docker
 
-before_install:
-  - docker build -t dockerimage -f dockerfile.dev .
+# before_install:
+#   - docker build -t dockerimage -f dockerfile.dev .
 
 # script:
 #   - docker run dockerimage ng test --watch=false --browsers=ChromeHeadless
