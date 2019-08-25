@@ -1,16 +1,16 @@
 sudo: required
 
-language: node_js
-node_js:
-  - 10.16.0
+# language: node_js
+# node_js:
+#   - 10.16.0
 
-dist: trusty
+# dist: trusty
 
-addons:
-  chrome: stable
+# addons:
+#   chrome: stable
 
-services:
-  - docker
+# services:
+#   - docker
 
 # before_install:
 #   - docker build -t dockerimage -f dockerfile.dev .
@@ -18,28 +18,29 @@ services:
 # script:
 #   - docker run dockerimage ng test --watch=false --browsers=ChromeHeadless
 
-# language: node_js
-# node_js:
-#   - "10.16.0"
-# sudo: true
 
-# addons:
-#   chrome: stable
+language: node_js
+node_js:
+  - "10.16.0"
+sudo: true
 
-# branches:
-#   only:
-#     - master
+addons:
+  chrome: stable
 
-# before_script:
-#   - npm install -g @angular/cli
+branches:
+  only:
+    - master
 
-# script:
-#   - ng test --watch=false --browsers=ChromeHeadless
+before_script:
+  - npm install -g @angular/cli
+
+script:
+  - ng test --watch=false --browsers=ChromeHeadless
 
 deploy:
   provider: elasticbeanstalk
   access_key_id:
-    secure: "$accesskey"
+   secure: "$accesskey"
   secret_access_key:
     secure: "$AWS_SECRET_KEY"
   region: "us-east-2"
