@@ -47,3 +47,4 @@ deploy:
   app: "portfolio"
   env: "portfolio-env"
   bucket_name: "elasticbeanstalk-us-east-2-646900675324"
+  bucket_path: "portfolio"
