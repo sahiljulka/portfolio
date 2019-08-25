@@ -7,4 +7,5 @@ RUN npm run build
 
 # To copy the files from build folder to directory where nginx could serve up the files
 FROM nginx
+EXPOSE 80
 COPY --from=builder  /src/app/dist/portfolio /usr/share/nginx/html
