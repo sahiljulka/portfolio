@@ -6,7 +6,4 @@ import { MatSidenav } from "@angular/material/sidenav";
   templateUrl: "./app.component.html",
   styleUrls: ["./app.component.scss"]
 })
-export class AppComponent {
-  title = "portfolio";
-  opened: boolean = false;
-}
+export class AppComponent {}

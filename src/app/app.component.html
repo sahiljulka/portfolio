@@ -1,24 +1,6 @@
-<mat-toolbar>
-  <span class="container">
-    <span class="left"> </span>
-    <span class="right">
-      <ng-container *ngTemplateOutlet="loading"></ng-container>
-    </span>
-  </span>
-</mat-toolbar>
-<mat-sidenav-container class="example-container">
-  <mat-expansion-panel>
-    <mat-expansion-panel-header> </mat-expansion-panel-header>
-    <span class="right">
-      <ng-container *ngTemplateOutlet="loading"></ng-container>
-    </span>
-  </mat-expansion-panel>
-</mat-sidenav-container>
-
-<ng-template #loading>
-  <span class="right-elem">Home</span>
-  <span class="right-elem">About</span>
-  <span class="right-elem">Exp</span>
-  <span class="right-elem">Work</span>
-  <span class="right-elem">Contact</span>
-</ng-template>
+<app-navbar class="navbar"></app-navbar>
+<app-home> </app-home>
+<app-about> </app-about>
+<app-exp></app-exp>
+<app-work></app-work>
+<app-contact></app-contact>

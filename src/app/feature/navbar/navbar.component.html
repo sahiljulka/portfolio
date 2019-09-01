@@ -1,0 +1,24 @@
+<mat-toolbar>
+  <span class="container">
+    <span class="left"> </span>
+    <span class="right">
+      <ng-container *ngTemplateOutlet="loading"></ng-container>
+    </span>
+  </span>
+</mat-toolbar>
+<mat-sidenav-container class="example-container">
+  <mat-expansion-panel>
+    <mat-expansion-panel-header> </mat-expansion-panel-header>
+    <span class="right">
+      <ng-container *ngTemplateOutlet="loading"></ng-container>
+    </span>
+  </mat-expansion-panel>
+</mat-sidenav-container>
+
+<ng-template #loading>
+  <a class="right-elem" href="#home">Home</a>
+  <a class="right-elem" href="#about">About</a>
+  <a class="right-elem" href="#exp">Exp</a>
+  <a class="right-elem" href="#work">Work</a>
+  <a class="right-elem" href="#contact">Contact</a>
+</ng-template>

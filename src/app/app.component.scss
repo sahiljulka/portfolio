@@ -1,53 +1,6 @@
-.container {
-  flex: 1;
-  display: inline-flex;
-  .left {
-    flex: 1;
-  }
-  .right {
-    flex: 1;
-    display: flex;
-    .right-elem {
-      flex: 1;
-      cursor: pointer;
-      font-weight: bolder;
-    }
-  }
-}
-.example-container {
-  flex: 1;
-  display: none;
-}
-@media (max-width: 700px) {
-  .container {
-    .left {
-      flex: 0;
-    }
-    .right {
-      flex: 2;
-      .right-elem {
-        font-weight: bolder;
-      }
-    }
-  }
-}
-@media (max-width: 400px) {
-  .example-container {
-    display: block;
-    .right {
-      display: flex;
-      flex-direction: column;
-      .right-elem {
-        font-weight: bolder;
-        flex: 1;
-        cursor: pointer;
-        font-size: 32px;
-        margin-bottom: 60px;
-        text-align: center;
-      }
-    }
-  }
-  mat-toolbar {
-    display: none;
-  }
+.navbar {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
 }
