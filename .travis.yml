@@ -44,6 +44,6 @@ deploy:
   secret_access_key:
     secure: "$AWS_SECRET_KEY"
   region: "us-east-2"
-  env: "portfolio-env-1"
+  env: "portfolio-env"
   bucket_name: "elasticbeanstalk-us-east-2-646900675324"
   bucket_path: "portfolio"
