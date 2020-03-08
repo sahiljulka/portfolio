@@ -4,16 +4,31 @@
 # https://aka.ms/yaml
 
 trigger:
-- master
+  - master
 
-pool:
-  vmImage: 'ubuntu-latest'
+  pool:
+    vmImage: 'ubuntu-latest'
 
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+  steps:
+    - task: UseNode@1
+      inputs:
+        versionSpec: '10.x'
+      displayName: 'Install Node.js'
+
+    - script: yarn install
+      displayName: 'Yarn install'
+      condition: succeeded()
+
+    - script: |
+        yarn global add @angular/cli
+      displayName: 'Install Angular'
+      condition: succeeded()
+
+    - script: npm run ng test
+      timeoutInMinutes: 1
+      displayName: 'Unit Testing'
+
+    - script: |
+        npm run ng build -- prod
+      displayName: 'Build App'
