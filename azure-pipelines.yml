@@ -26,7 +26,7 @@ trigger:
       condition: succeeded()
 
     - script: |
-        npm run ng test
+        yarn test-headless
       timeoutInMinutes: 1
       displayName: 'Unit Testing'
 
