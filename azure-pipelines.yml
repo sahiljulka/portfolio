@@ -30,5 +30,5 @@ steps:
     displayName: "Unit Testing"
 
   - script: |
-      npm run ng build -- prod
+      yarn build
     displayName: "Build App"
