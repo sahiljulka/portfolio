@@ -26,9 +26,9 @@ steps:
     condition: succeeded()
 
   - script: |
-      ng test
+      npm run ng test 
     displayName: 'Unit Testing'
 
   - script: |
-      ng build
+      npm run ng build -- prod
     displayName: 'Build App'
