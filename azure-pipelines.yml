@@ -25,7 +25,8 @@ trigger:
       displayName: 'Install Angular'
       condition: succeeded()
 
-    - script: npm run ng test
+    - script: |
+        npm run ng test
       timeoutInMinutes: 1
       displayName: 'Unit Testing'
 
