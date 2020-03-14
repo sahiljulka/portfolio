@@ -25,7 +25,7 @@ steps:
     condition: succeeded()
 
   - script: |
-      echo skipsubsequent: $skipsubsequent
+      echo skipsubsequent: "$skipsubsequent"
       yarn global add @angular/cli
     displayName: "Install Angular"
     condition: succeeded()
