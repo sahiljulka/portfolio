@@ -15,7 +15,10 @@ steps:
       versionSpec: "10.x"
     displayName: "Install Node.js"
 
-  - script: yarn install
+  - script: |
+      echo variables['build.sourceBranch']
+      echo ${variables['build.sourceBranch']}
+      yarn install
     displayName: "Yarn install"
     condition: succeeded()
 
