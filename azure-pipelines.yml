@@ -17,7 +17,7 @@ steps:
 
   - script: |
       echo variables['Build.SourceBranch']
-      echo ${variables['Build.SourceBranch']}
+      echo ${variables}
       yarn install
     displayName: "Yarn install"
     condition: succeeded()
