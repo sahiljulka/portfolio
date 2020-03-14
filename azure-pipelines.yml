@@ -20,9 +20,8 @@ steps:
       targetType: 'inline'
       script: |
         echo $(Pipeline.Workspace)
+        ls $(Pipeline.Workspace)
         echo "1" $(Build.ArtifactStagingDirectory)
-        echo "2" $Build.ArtifactStagingDirectory
-        echo "3" ${Build.ArtifactStagingDirectory}
         # Write your commands here
         echo ##vso[task.setvariable variable=skipsubsequent]false
         echo 'Hello world'
