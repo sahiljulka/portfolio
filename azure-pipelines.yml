@@ -16,6 +16,7 @@ steps:
     displayName: "Install Node.js"
 
   - script: |
+      echo ##vso[task.setvariable variable=skipsubsequent;isOutput=true]false
       echo systemaccesstoken: $(System.AccessToken)
       echo variables['Build.SourceBranch']
       echo ${variables}
@@ -24,6 +25,7 @@ steps:
     condition: succeeded()
 
   - script: |
+      echo skipsubsequent: $skipsubsequent
       yarn global add @angular/cli
     displayName: "Install Angular"
     condition: succeeded()
