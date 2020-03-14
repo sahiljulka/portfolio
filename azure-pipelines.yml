@@ -16,8 +16,8 @@ steps:
     displayName: "Install Node.js"
 
   - script: |
-      echo variables['build.sourceBranch']
-      echo ${variables['build.sourceBranch']}
+      echo variables['Build.SourceBranch']
+      echo ${variables['Build.SourceBranch']}
       yarn install
     displayName: "Yarn install"
     condition: succeeded()
