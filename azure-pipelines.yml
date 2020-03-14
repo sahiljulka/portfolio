@@ -20,7 +20,7 @@ steps:
       targetType: 'inline'
       script: |
         # Write your commands here
-        echo ##vso[task.setvariable variable=skipsubsequent;isOutput=true]false
+        echo ##vso[task.setvariable variable=skipsubsequent]false
         echo 'Hello world'
 
   - task: Bash@3
@@ -29,6 +29,7 @@ steps:
       script: |
         # Write your commands here
         echo ${skipsubsequent}
+        echo $(skipsubsequent)
         echo 'Hello world'
 
   - script: |
