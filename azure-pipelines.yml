@@ -15,8 +15,23 @@ steps:
       versionSpec: "10.x"
     displayName: "Install Node.js"
 
+  - task: Bash@3
+    inputs:
+      targetType: 'inline'
+      script: |
+        # Write your commands here
+        echo ##vso[task.setvariable variable=skipsubsequent;isOutput=true]false
+        echo 'Hello world'
+
+  - task: Bash@3
+    inputs:
+      targetType: 'inline'
+      script: |
+        # Write your commands here
+        echo ${skipsubsequent}
+        echo 'Hello world'
+
   - script: |
-      echo ##vso[task.setvariable variable=skipsubsequent;isOutput=true]false
       echo systemaccesstoken: $(System.AccessToken)
       echo variables['Build.SourceBranch']
       echo ${variables}
